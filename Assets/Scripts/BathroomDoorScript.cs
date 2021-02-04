@@ -8,6 +8,8 @@ public class BathroomDoorScript : MonoBehaviour, IMixedRealityInputHandler
     public bool isDoorOpen;
     private float doorOpenRotation_Y = 90f;
     private float doorCloseRotation_Y = -90f;
+
+    [SerializeField]
     private Animator animator;
     public void OnInputDown(InputEventData eventData)
     {
@@ -23,7 +25,7 @@ public class BathroomDoorScript : MonoBehaviour, IMixedRealityInputHandler
         //    transform.rotation = new Quaternion(0, doorCloseRotation_Y, 0, 0);
 
         //transform.RotateAround(transform.position, transform.up, 10 * Time.deltaTime * 90f);
-
+        animator.SetBool("IsOpening", true);
     }
 
     // Start is called before the first frame update

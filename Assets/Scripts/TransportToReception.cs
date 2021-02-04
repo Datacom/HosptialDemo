@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using Microsoft.MixedReality.Toolkit.Input;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TransportToReception : MonoBehaviour
+public class TransportToReception : MonoBehaviour, IMixedRealityInputHandler
 {
     // Start is called before the first frame update
     void Start()
@@ -19,11 +20,19 @@ public class TransportToReception : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.gameObject.tag == "Player")
-        {
-            Scene sceneToLoad = SceneManager.GetSceneByName("Reception");
-            SceneManager.LoadScene(sceneToLoad.name, LoadSceneMode.Additive);
-            SceneManager.MoveGameObjectToScene(hit.gameObject, sceneToLoad);
-        }
+        //Scene sceneToLoad = SceneManager.GetSceneByName("Reception");
+        //SceneManager.LoadSceneAsync(sceneToLoad.name, LoadSceneMode.Single);
+        //SceneManager.MoveGameObjectToScene(GameObject.FindGameObjectWithTag("MixedRealityPlayspace"), sceneToLoad);
+    }
+
+    public void OnInputUp(InputEventData eventData)
+    {
+    }
+
+    public void OnInputDown(InputEventData eventData)
+    {
+        Scene sceneToLoad = SceneManager.GetSceneByName("Reception");
+        SceneManager.LoadSceneAsync(sceneToLoad.name, LoadSceneMode.Single);
+        SceneManager.MoveGameObjectToScene(GameObject.FindGameObjectWithTag("MixedRealityPlayspace"), sceneToLoad);
     }
 }
