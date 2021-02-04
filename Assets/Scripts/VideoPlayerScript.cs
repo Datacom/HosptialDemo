@@ -23,17 +23,12 @@ public class VideoPlayerScript : MonoBehaviour, IMixedRealityFocusHandler
         }
     }
 
-    private void Awake()
-    {
-        myVideoPlayer = transform.GetComponent<VideoPlayer>();
-        isPlay = false;
-        myVideoPlayer.Stop();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
-        
+        myVideoPlayer = transform.GetComponent<VideoPlayer>();
+        isPlay = false;
+        myVideoPlayer.Pause();
     }
 
     // Update is called once per frame
