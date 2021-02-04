@@ -12,7 +12,7 @@ public class EndOfVideoTransition : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -22,19 +22,16 @@ public class EndOfVideoTransition : MonoBehaviour
         if (vp.isPlaying){
             hasStartedPlaying = true;
         } else if (!vp.isPlaying && hasStartedPlaying && !hasStopped) {
-            Debug.Log("Finished");
-            FadeToBlack();
+            animator.SetTrigger("FadeOut");
             SceneManager.LoadSceneAsync("Reception", LoadSceneMode.Single);
-            //SceneManager.sceneLoaded += OnSceneLoaded;
+            SceneManager.sceneLoaded += OnSceneLoaded;
             hasStopped = true;
         }
     }
 
-    void FadeToBlack(){
-        animator.SetTrigger("FadeOut");
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Reception"));
+        //animator.ResetTrigger("FadeOut");
+        Debug.Log(SceneManager.GetActiveScene().name);
     }
-
-    //void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-    //    animator.SetTrigger("FadeIn");
-    //}
 }
