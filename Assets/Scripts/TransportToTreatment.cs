@@ -19,6 +19,7 @@ public class TransportToTreatment : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
+        print("Controller hit event");
         if (hit.gameObject.tag == "Player")
         {
             Scene sceneToLoad = SceneManager.GetSceneByName("TreatmentRoom");
