@@ -7,6 +7,7 @@ public class EndOfVideoTransition : MonoBehaviour
 {
     private bool hasStartedPlaying = false;
     private bool hasStopped = false;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,18 @@ public class EndOfVideoTransition : MonoBehaviour
             hasStartedPlaying = true;
         } else if (!vp.isPlaying && hasStartedPlaying && !hasStopped) {
             Debug.Log("Finished");
+            FadeToBlack();
             SceneManager.LoadSceneAsync("Reception", LoadSceneMode.Single);
+            //SceneManager.sceneLoaded += OnSceneLoaded;
             hasStopped = true;
         }
     }
+
+    void FadeToBlack(){
+        animator.SetTrigger("FadeOut");
+    }
+
+    //void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+    //    animator.SetTrigger("FadeIn");
+    //}
 }
