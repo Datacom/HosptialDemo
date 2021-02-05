@@ -1,4 +1,6 @@
-﻿using Microsoft.MixedReality.Toolkit.Input;
+﻿using Microsoft.MixedReality.Toolkit;
+using Microsoft.MixedReality.Toolkit.Input;
+using Microsoft.MixedReality.Toolkit.SceneSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,8 +32,12 @@ public class TransportToTreatment : MonoBehaviour, IMixedRealityInputHandler
 
     public void OnInputDown(InputEventData eventData)
     {
-        Scene sceneToLoad = SceneManager.GetSceneByName("TreatmentRoom");
-        SceneManager.LoadSceneAsync("TreatmentRoom", LoadSceneMode.Single);
-        SceneManager.MoveGameObjectToScene(GameObject.FindGameObjectWithTag("MixedRealityPlayspace"), sceneToLoad);
+        MixedRealityToolkit mixedRealityToolkit = new MixedRealityToolkit();
+
+        IMixedRealitySceneSystem sceneSystem = mixedRealityToolkit.GetService<IMixedRealitySceneSystem>();
+        sceneSystem.LoadContent("TreatmentRoom").Wait();
+        //Scene sceneToLoad = SceneManager.GetSceneByName("TreatmentRoom");
+        //SceneManager.LoadSceneAsync("TreatmentRoom", LoadSceneMode.Single);
+        //SceneManager.MoveGameObjectToScene(GameObject.FindGameObjectWithTag("MixedRealityPlayspace"), sceneToLoad);
     }
 }

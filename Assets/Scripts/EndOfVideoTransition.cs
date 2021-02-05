@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class EndOfVideoTransition : MonoBehaviour
 {
     private bool hasStartedPlaying = false;
@@ -23,9 +22,11 @@ public class EndOfVideoTransition : MonoBehaviour
             hasStartedPlaying = true;
         } else if (!vp.isPlaying && hasStartedPlaying && !hasStopped) {
             animator.SetTrigger("FadeOut");
-            SceneManager.LoadSceneAsync("Reception", LoadSceneMode.Single);
-            SceneManager.sceneLoaded += OnSceneLoaded;
+            //SceneManager.LoadSceneAsync("Reception", LoadSceneMode.Single);
+           //SceneManager.sceneLoaded += OnSceneLoaded;
             hasStopped = true;
+            var videoPlayerObj = GameObject.FindGameObjectWithTag("VideoPlayer");
+            videoPlayerObj.SetActive(false);
         }
     }
 

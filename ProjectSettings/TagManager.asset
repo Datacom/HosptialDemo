@@ -6,6 +6,8 @@ TagManager:
   tags:
   - GrabTestCub
   - MixedRealityPlayspace
+  - MixedRealityToolkit
+  - VideoPlayer
   layers:
   - Default
   - TransparentFX
