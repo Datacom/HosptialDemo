@@ -2,11 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Microsoft.MixedReality.Toolkit;
+using Microsoft.MixedReality.Toolkit.Input;
+
 public class EndOfVideoTransition : MonoBehaviour
 {
     private bool hasStartedPlaying = false;
     private bool hasStopped = false;
     public Animator animator;
+
+    private IMixedRealityInputSystem inputSystem = null;
+    private IMixedRealityInputSystem InputSystem {
+        get
+        {
+            if (inputSystem == null)
+            {
+                MixedRealityServiceRegistry.TryGetService<IMixedRealityInputSystem>(out inputSystem);
+            }
+            return inputSystem;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -20,19 +35,13 @@ public class EndOfVideoTransition : MonoBehaviour
         var vp = GetComponent<UnityEngine.Video.VideoPlayer>();
         if (vp.isPlaying){
             hasStartedPlaying = true;
+            InputSystem.Disable();
         } else if (!vp.isPlaying && hasStartedPlaying && !hasStopped) {
             animator.SetTrigger("FadeOut");
-            //SceneManager.LoadSceneAsync("Reception", LoadSceneMode.Single);
-           //SceneManager.sceneLoaded += OnSceneLoaded;
             hasStopped = true;
             var videoPlayerObj = GameObject.FindGameObjectWithTag("VideoPlayer");
             videoPlayerObj.SetActive(false);
+            InputSystem.Enable();
         }
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Reception"));
-        //animator.ResetTrigger("FadeOut");
-        Debug.Log(SceneManager.GetActiveScene().name);
     }
 }
