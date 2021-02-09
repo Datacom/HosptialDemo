@@ -22,7 +22,6 @@ public class WipesGaze : MonoBehaviour, IMixedRealityFocusHandler
     void Awake()
     {
         isGaze = false;
-        print("Is gaze is " + isGaze.ToString());
     }
 
     // Start is called before the first frame update

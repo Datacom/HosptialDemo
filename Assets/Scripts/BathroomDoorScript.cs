@@ -25,7 +25,10 @@ public class BathroomDoorScript : MonoBehaviour, IMixedRealityInputHandler
         //    transform.rotation = new Quaternion(0, doorCloseRotation_Y, 0, 0);
 
         //transform.RotateAround(transform.position, transform.up, 10 * Time.deltaTime * 90f);
+        if (!isDoorOpen)
+            transform.GetComponent<AudioSource>().Play();
         animator.SetBool("IsOpening", true);
+        isDoorOpen = true;
     }
 
     // Start is called before the first frame update

@@ -8,6 +8,14 @@ TagManager:
   - MixedRealityPlayspace
   - MixedRealityToolkit
   - VideoPlayer
+  - Projectile
+  - Kegel
+  - BowlingBall
+  - Kegel1
+  - Kegel2
+  - Kegel3
+  - Kegel4
+  - Kegel5
   layers:
   - Default
   - TransparentFX
