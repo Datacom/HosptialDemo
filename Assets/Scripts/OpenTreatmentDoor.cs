@@ -5,6 +5,7 @@ using Microsoft.MixedReality.Toolkit.Input;
 
 public class OpenTreatmentDoor : MonoBehaviour, IMixedRealityInputHandler
 {
+    bool isDoorOpen;
     [SerializeField]
     private Animator animator;
     public void OnInputDown(InputEventData eventData)
@@ -13,12 +14,16 @@ public class OpenTreatmentDoor : MonoBehaviour, IMixedRealityInputHandler
 
     public void OnInputUp(InputEventData eventData)
     {
+        if (!isDoorOpen)
+            transform.GetComponent<AudioSource>().Play();
         animator.SetBool("IsOpening", true);
+        isDoorOpen = true;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        isDoorOpen = false;
         animator = transform.GetComponent<Animator>();
     }
 
