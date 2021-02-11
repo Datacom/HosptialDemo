@@ -33,12 +33,12 @@ public class EndOfVideoTransition : MonoBehaviour
     void Update()
     {
         var vp = GetComponent<UnityEngine.Video.VideoPlayer>();
+        GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
         if (vp.isPlaying){
             hasStartedPlaying = true;
             InputSystem.Disable();
         } else if (!vp.isPlaying && hasStartedPlaying && !hasStopped) {
-            animator.SetTrigger("FadeOut");
-            hasStopped = true;
+            animator.SetTrigger("FadeFromBlack");
             var videoPlayerObj = GameObject.FindGameObjectWithTag("VideoPlayer");
             videoPlayerObj.SetActive(false);
             InputSystem.Enable();
