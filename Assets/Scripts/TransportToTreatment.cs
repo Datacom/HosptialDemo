@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TransportToTreatment : MonoBehaviour, IMixedRealityInputHandler
+public class TransportToTreatment : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -18,26 +18,5 @@ public class TransportToTreatment : MonoBehaviour, IMixedRealityInputHandler
     void Update()
     {
         
-    }
-
-    //private void OnControllerColliderHit(ControllerColliderHit hit)
-    //{
-    //    print("Controller hit event");
-        
-    //}
-
-    public void OnInputUp(InputEventData eventData)
-    {
-    }
-
-    public void OnInputDown(InputEventData eventData)
-    {
-        MixedRealityToolkit mixedRealityToolkit = new MixedRealityToolkit();
-
-        IMixedRealitySceneSystem sceneSystem = mixedRealityToolkit.GetService<IMixedRealitySceneSystem>();
-        sceneSystem.LoadContent("TreatmentRoom").Wait();
-        //Scene sceneToLoad = SceneManager.GetSceneByName("TreatmentRoom");
-        //SceneManager.LoadSceneAsync("TreatmentRoom", LoadSceneMode.Single);
-        //SceneManager.MoveGameObjectToScene(GameObject.FindGameObjectWithTag("MixedRealityPlayspace"), sceneToLoad);
     }
 }

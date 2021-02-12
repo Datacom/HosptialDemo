@@ -16,6 +16,19 @@ TagManager:
   - Kegel3
   - Kegel4
   - Kegel5
+  - Display1VideoPlayScreen
+  - Display1InitialScreen
+  - Display1_InitialScreen
+  - Display1_VideoPlayScreen
+  - VideoPlayMainScreen
+  - InitialSplitScreen1
+  - InitialSplitScreen2
+  - InitialSplitScreen3
+  - InitialSplitScreen4
+  - VideoPlaySplitScreen
+  - VideoPlaySplitScreen1
+  - VideoPlaySplitScreen2
+  - VideoPlaySplitScreen3
   layers:
   - Default
   - TransparentFX
