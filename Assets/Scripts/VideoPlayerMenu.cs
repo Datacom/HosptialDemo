@@ -26,14 +26,15 @@ public class VideoPlayerMenu : MonoBehaviour, IMixedRealityInputHandler
 
             videoPlayMianScreenVideoPlayer.clip = newVideoClip;
             videoPlayMianScreenVideoPlayer.Play();
-            Debug.Log("Main screen " + videoPlayMianScreenVideoPlayer.clip.name);
+            //Debug.Log("Main screen " + videoPlayMianScreenVideoPlayer.clip.name);
 
             transform.GetComponent<VideoPlayer>().clip = origVideoClip;
-            Debug.Log("clicked screen " + transform.GetComponent<VideoPlayer>().clip.name);
+            //Debug.Log("clicked screen " + transform.GetComponent<VideoPlayer>().clip.name);
             transform.GetComponent<VideoPlayer>().Play();
             transform.GetComponent<VideoPlayer>().Pause();
             triggered = true;
-        } else
+        }
+        else
         {
             triggered = false;
         }
@@ -42,7 +43,8 @@ public class VideoPlayerMenu : MonoBehaviour, IMixedRealityInputHandler
     // Start is called before the first frame update
     void Start()
     {
-        
+        transform.GetComponent<VideoPlayer>().Play();
+        transform.GetComponent<VideoPlayer>().Pause();
     }
 
     // Update is called once per frame
