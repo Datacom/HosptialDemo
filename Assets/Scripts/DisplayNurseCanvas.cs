@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DisplayReceptionUIText : MonoBehaviour, IMixedRealityInputHandler
+public class DisplayNurseCanvas : MonoBehaviour, IMixedRealityInputHandler
 {
     public void OnInputDown(InputEventData eventData)
     {
@@ -13,8 +13,7 @@ public class DisplayReceptionUIText : MonoBehaviour, IMixedRealityInputHandler
     public void OnInputUp(InputEventData eventData)
     {
         //throw new System.NotImplementedException();
-        GameObject.Find("ReceptionCanvas").GetComponent<Canvas>().enabled = true;
-
+        GameObject.Find("NurseCanvas").GetComponent<Canvas>().enabled = true;
     }
 
     // Start is called before the first frame update
