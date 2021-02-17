@@ -43,7 +43,7 @@ public class ThrowObject : MonoBehaviour, IMixedRealityInputHandler
 
         //transform.GetComponent<Rigidbody>().velocity = (- direction) * 2f;
 
-        transform.GetComponent<Rigidbody>().AddForce(direction * 2f, ForceMode.Impulse);
+        transform.GetComponent<Rigidbody>().AddForce(direction * 4f, ForceMode.Impulse);
 
         initialPosition = currentPosition;
     }
