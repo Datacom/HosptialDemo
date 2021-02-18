@@ -3449,7 +3449,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139715631}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 0ad4bec0c14bdf249ab70297df37fa1d, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 0206380c332d4d7489e17bb182b0a57f, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -17073,7 +17073,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594330407}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: fd312bceab6b4ad468c32780021385f3, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 93f9abff0a172fa4d9608345f3c4e337, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -27421,8 +27421,8 @@ GameObject:
   - component: {fileID: 975482624}
   - component: {fileID: 975482623}
   m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_Name: ReceptionText
+  m_TagString: ReceptionText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27444,7 +27444,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2, y: 0.5}
+  m_SizeDelta: {x: 2, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &975482623
 MonoBehaviour:
@@ -35766,7 +35766,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -10.18, y: 9.335595}
-  m_SizeDelta: {x: 2, y: 0.5}
+  m_SizeDelta: {x: 2, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1375620553
 MonoBehaviour:
@@ -54090,7 +54090,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036991511}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 24cca7d28ab8e534ea2446590d53caaa, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 1620afd77fb46794492c860a6d13c6eb, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -56886,7 +56886,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111918078}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 29abc863539cf5f4b9f1b6e4da077c0c, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 93a569e72eee540478dc1099ee94ab24, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}

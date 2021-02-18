@@ -29,6 +29,7 @@ TagManager:
   - VideoPlaySplitScreen1
   - VideoPlaySplitScreen2
   - VideoPlaySplitScreen3
+  - ReceptionText
   layers:
   - Default
   - TransparentFX
