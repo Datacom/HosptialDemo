@@ -10,6 +10,8 @@ public class EndOfVideoTransition : MonoBehaviour
     private bool hasStartedPlaying = false;
     private bool hasStopped = false;
     public Animator animator;
+    public GameObject allObjects;
+    public Material defaultSkyBox;
 
     private IMixedRealityInputSystem inputSystem = null;
     private IMixedRealityInputSystem InputSystem {
@@ -37,11 +39,17 @@ public class EndOfVideoTransition : MonoBehaviour
         if (vp.isPlaying){
             hasStartedPlaying = true;
             InputSystem.Disable();
+            if (allObjects != null)
+            {
+                allObjects.SetActive(false);
+            }
         } else if (!vp.isPlaying && hasStartedPlaying && !hasStopped) {
             animator.SetTrigger("FadeFromBlack");
             var videoPlayerObj = GameObject.FindGameObjectWithTag("VideoPlayer");
             videoPlayerObj.SetActive(false);
             InputSystem.Enable();
+            allObjects.SetActive(true);
+            RenderSettings.skybox = defaultSkyBox;
         }
     }
 }

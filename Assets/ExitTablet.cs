@@ -13,11 +13,8 @@ public class ExitTablet : MonoBehaviour, IMixedRealityInputHandler
 
     public void OnInputUp(InputEventData eventData)
     {
-        if (eventData.GetType().ToString() != "tablet") {
-            GameObject.Find("Tablet").SetActive(false);
-            idleTablet.SetActive(true);
-            //GameObject.Find("TabletOnTable").SetActive(true);
-        };
+        GameObject.Find("Tablet").SetActive(false);
+        idleTablet.SetActive(true);
     }
 
     // Start is called before the first frame update
